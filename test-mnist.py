@@ -6,7 +6,6 @@ import nnet
 if __name__ == '__main__':
     trX,teX,trY,teY = mnist.mnist()
     net = nnet.NNet([50], l1_reg=0.0002, dropout=0.4)
-    #net = nnet.NNet([100])
     net.train(trX, trY, epochs=10)
     wrong = 0
     total = 0
@@ -16,4 +15,4 @@ if __name__ == '__main__':
         if prediction != actual:
             wrong += 1
         total += 1
-    print wrong, total, float(total-wrong)/float(total)
+    print(wrong, total, float(total-wrong)/float(total))

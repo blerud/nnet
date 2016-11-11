@@ -138,7 +138,7 @@ class NNet():
             insize = len(X[0])
             outsize = len(y[0])
             self.init_weights(insize, outsize)
-        for e in xrange(epochs):
+        for e in range(epochs):
             cost = 0
             for Xa, ya in zip(X, y):
                 inputs = np.array([Xa])
@@ -151,5 +151,5 @@ class NNet():
                 for i in range(len(self.weights)):
                     delta_w = self.adagrad(dw, i)
                     self.weights[i] = self.weights[i] + delta_w
-            print 'Epoch ' + str(e) + ', cost: ' + str(cost)
+            print('Epoch ' + str(e) + ', cost: ' + str(cost))
 
